@@ -21,7 +21,7 @@
 
 <img src="docs/demo.gif" alt="A new screenshot appears, gets a sortable timestamp name, then a descriptive name from the vision model." width="100%">
 
-<sub><a href="docs/demo.mp4">MP4 version</a> · animated walkthrough of the two stages, built from real watcher output</sub>
+<sub><a href="docs/demo.mp4">MP4 version</a> · screen recording of a real ⌘⇧3 press in <code>~/Screenshot</code>: the new file gets a timestamp name, then a descriptive one</sub>
 
 </div>
 
