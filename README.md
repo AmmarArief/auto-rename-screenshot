@@ -1,5 +1,10 @@
 <div align="center">
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/brand/logo-dark.svg">
+  <img src="docs/brand/logo-light.svg" alt="" width="88" height="88">
+</picture>
+
 # auto-rename-screenshot
 
 **Screenshots that name themselves.** macOS writes `Screenshot 2026-11-27 at 23.16.08.png`; a few seconds later the file is called `9router-usage-analytics.png` — because a vision model looked at it.
@@ -119,6 +124,20 @@ launchctl bootout "gui/$(id -u)/com.$(id -un).screenshot-rename"
 rm ~/Library/LaunchAgents/com.$(id -un).screenshot-rename.plist \
    ~/bin/screenshot-rename.sh ~/.config/screenshot-rename.env
 ```
+
+## Brand
+
+| Asset | File |
+|---|---|
+| Logo, light background | [`docs/brand/logo-light.svg`](docs/brand/logo-light.svg) |
+| Logo, dark background | [`docs/brand/logo-dark.svg`](docs/brand/logo-dark.svg) |
+| Logo, single colour | [`docs/brand/logo-mono.svg`](docs/brand/logo-mono.svg) |
+| Logo, 16–24 px | [`docs/brand/logo-small.svg`](docs/brand/logo-small.svg) |
+| App icon | `docs/brand/icon-{16,32,48,180,192,512}.png` |
+| Favicon | [`docs/brand/favicon.ico`](docs/brand/favicon.ico) |
+| Social preview (1280×640) | [`docs/brand/social-preview.png`](docs/brand/social-preview.png) |
+
+The mark is a file outline with a timestamp line turning into a single accent bar: the name becoming meaningful.
 
 ## License
 
