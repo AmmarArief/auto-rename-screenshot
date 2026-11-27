@@ -15,6 +15,16 @@
 [![No Shortcuts](https://img.shields.io/badge/Shortcuts-not%20required-7fd1a0?style=flat-square)](#why-not-shortcuts)
 
 <img src="docs/demo.png" alt="Before: timestamp filenames. After: descriptive filenames read from the screen." width="100%">
+<div align="center">
+
+### Watch it happen
+
+<img src="docs/demo.gif" alt="A new screenshot appears, gets a sortable timestamp name, then a descriptive name from the vision model." width="100%">
+
+<sub><a href="docs/demo.mp4">MP4 version</a> · animated walkthrough of the two stages, built from real watcher output</sub>
+
+</div>
+
 
 </div>
 
