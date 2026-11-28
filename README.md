@@ -80,6 +80,45 @@ defaults write com.apple.screencapture location ~/Screenshot
 killall SystemUIServer
 ```
 
+## Set it up with your agent
+
+Paste this into Claude Code, Codex, omp, or any agent with shell access. It does the install, the config, and the verification.
+
+```
+Install auto-rename-screenshot on this Mac.
+
+1. Clone https://github.com/AmmarArief/auto-rename-screenshot to ~/auto-rename-screenshot
+   and run ./install.sh (defaults to ~/Screenshot).
+2. Ask me for two values before writing config:
+   - the OpenAI-compatible base URL, e.g. https://your-endpoint/v1
+   - the vision model name that accepts images
+   Then write them into ~/.config/screenshot-rename.env as API_BASE and MODEL,
+   chmod 600. Never echo my API key.
+3. Store the key with:
+   security add-generic-password -s omp-9router -a 9router -w "<KEY>"
+   and leave API_KEY unset so the script reads Keychain.
+4. Point macOS at the watched folder:
+   defaults write com.apple.screencapture location ~/Screenshot && killall SystemUIServer
+5. Verify with the real path, not a mock:
+   - take a screenshot with ⌘⇧3 (osascript "key code 20 using {command down, shift down}")
+   - wait until ~/Library/Logs/screenshot-rename.log shows a "renamed:" line and then
+     an "enriched:" line for that file
+   - report the final filename and the seconds between the keypress and the rename
+6. If enrichment never appears, check that /bin/bash (3.2) can run the script:
+   /bin/bash -n ~/bin/screenshot-rename.sh
+Report: script path, agent label, folder, config values (without the key), and the verified filename.
+```
+
+The agent needs your endpoint and model name; everything else it can figure out from the script. If it skips step 5, the install is unproven — the log is the only proof that the watcher and the model both work.
+
+### Manual setup, four commands
+
+```bash
+git clone https://github.com/AmmarArief/auto-rename-screenshot
+cd auto-rename-screenshot && ./install.sh
+# then edit ~/.config/screenshot-rename.env and press ⌘⇧3 to test
+```
+
 ## How it works
 
 ```mermaid
