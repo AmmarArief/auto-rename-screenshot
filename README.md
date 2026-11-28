@@ -164,7 +164,7 @@ enriched: discord-server-voice-connected.png
 | More accurate names | raise `sips -Z 1024` in `rename.sh` |
 | Faster, cheaper names | lower it, or use a smaller model |
 | Describe older files too | raise `ENRICH_MAX_AGE` |
-| Different naming style | edit the prompt inside `rename.sh` |
+| Different naming style | edit the prompt inside `rename.sh` — it asks for the app first, then the content (`discord-profile-editor`), ignores sidebar/server/channel labels, and drops generic words |
 
 ## Uninstall
 

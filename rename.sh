@@ -89,7 +89,7 @@ b = base64.b64encode(open(sys.argv[1], 'rb').read()).decode()
 print(json.dumps({
     "model": sys.argv[2],
     "messages": [{"role": "user", "content": [
-        {"type": "text", "text": "Name this image as a filename: 3-5 lowercase English words joined by hyphens. Read the text that is actually on screen and use it: the window title, page heading, product name, URL or sidebar label. Transcribe those names exactly as spelled; never guess a name that is not visible. Then add the screen or panel being shown. Never use generic words like screenshot, screen, interface, desktop, computer or image. Output only the words, no punctuation, no extension."},
+        {"type": "text", "text": "Name this image as a filename: 3-5 lowercase English words joined by hyphens. Start with the application or website the screenshot is from (discord, slack, finder, vscode, chrome, telegram, figma, ...). Then say what the main content shows: profile, settings dialog, chat, code editor, dashboard, invoice, error. Ignore sidebar titles, server names, channel names, usernames and section labels; never use them as the app name. Read product names that are actually on screen, do not invent them. Never use generic words like screenshot, screen, interface, desktop, computer or image. Output only the words, no punctuation, no extension."},
         {"type": "image_url", "image_url": {"url": "data:image/jpeg;base64," + b}},
     ]}],
     "max_tokens": 1024,
